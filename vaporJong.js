@@ -1,8 +1,11 @@
 let david;
 let windows;
+let pedestal;
+
 function preload(){
     david = loadImage('David_face.png');
     windows = loadImage('Windows.svg');
+    pedestal = loadImage("pedestal.png");
 }
 
 function setup() {
@@ -29,7 +32,8 @@ function draw() {
     // rect(0, 0, radius, radius);
     windows.filter(BLUR, 5);
     image(david, 0, 0, radius, radius);
-    image(windows, windowWidth - radius, 0, radius, radius);
+    image(pedestal, radius / 2, windowHeight - radius, radius, radius)
+    image(windows, radius * .6, windowHeight - (radius * 1.9), radius, radius);
     rotate(180);
     image(david, - windowWidth, - windowHeight, radius, radius)
 }
