@@ -23,7 +23,7 @@ function setup() {
 function draw() {
   const radius = windowWidth / 6;
   push();
-  translate(0, Math.sin(millis() / 1000) * radius * .05);
+  translate(0, Math.sin(millis() / 1000) * radius * 0.05);
   image(windows, radius * 0.6, windowHeight - radius * 1.9, radius, radius);
   pop();
   push();
@@ -41,7 +41,7 @@ function drawBackground() {
   const height = windowWidth / 3;
   const radius = height / 2;
   const centerX = windowWidth / 2;
-  const centerY = windowHeight / 2;
+  const centerY = windowHeight * 0.4;
   for (let y = -radius; y < radius; y++) {
     if (y >= 0 && y % 10 < (y * 8) / radius) {
       noStroke();
@@ -56,6 +56,35 @@ function drawBackground() {
     }
     x = Math.sqrt(radius * radius - y * y);
     line(centerX - x, centerY + y, centerX + x, centerY + y);
+  }
+  fill("#bc13fe");
+  noStroke();
+  rect(0, windowHeight * 0.6, windowWidth, windowHeight * 0.4);
+
+  stroke("#07f2f1");
+  strokeWeight(2);
+  let y = windowHeight * 0.6;
+  let spacing = 30;
+  while (y < windowHeight) {
+    line(0, y, windowWidth, y);
+    y += spacing;
+    spacing += 10;
+  }
+  let dx = 0;
+  while (dx < windowWidth * 0.5) {
+    line(
+      windowWidth * 0.5 + dx,
+      windowHeight * 0.6,
+      windowWidth * 0.5 + dx * 3,
+      windowHeight
+    );
+     line(
+       windowWidth * 0.5 - dx,
+       windowHeight * 0.6,
+       windowWidth * 0.5 - dx * 3,
+       windowHeight
+     );
+    dx += 100;
   }
 
   image(david, 0, 0, radius, radius);
