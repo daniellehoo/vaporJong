@@ -3,32 +3,33 @@ let windows;
 let pedestal;
 let arizona;
 let tiles = [];
+let tileImages = [];
+const IMAGE_SIZE = 72;
 
 class Tile {
-  constructor(x, y, character) {
+  constructor(x, y, image) {
     this.position = createVector(x, y);
     this.velocity = createVector(randomGaussian(0, 5), 0);
-    this.character = character;
+    this.image = image;
   }
 
   update() {
     this.position.add(this.velocity);
-    if (this.position.y > windowHeight - 36) {
+    if (this.position.y > windowHeight - IMAGE_SIZE) {
       if (this.velocity.y > 5) {
         this.velocity.y *= -0.5;
         this.velocity.x *= 0.5;
       } else {
         this.velocity.x = 0;
       }
-      this.position.y = windowHeight - 36;
+      this.position.y = windowHeight - IMAGE_SIZE;
     } else {
       this.velocity.add(createVector(0, 1));
     }
   }
 
   render() {
-    // rect(this.position.x, this.position.y, 100, 100);
-    text(this.character, this.position.x, this.position.y);
+    image(this.image, this.position.x, this.position.y, IMAGE_SIZE, IMAGE_SIZE);
   }
 }
 
@@ -37,6 +38,9 @@ function preload() {
   windows = loadImage("Windows.svg");
   pedestal = loadImage("pedestal.png");
   arizona = loadImage("can.png");
+  tileImages.push(loadImage("tileLibrary/mahjong-tile-chrysanthemum.png"));
+  tileImages.push(loadImage("tileLibrary/mahjong-tile-summer.png"));
+  tileImages.push(loadImage("tileLibrary/mahjong-tile-joker.png"));
 }
 
 // setup is called once
@@ -133,16 +137,9 @@ function windowResized() {
 }
 
 function mouseClicked() {
-  // textSize(72);
-  // text(randomTile(), mouseX, mouseY);
   tiles.push(new Tile(mouseX, mouseY, randomTile()));
 }
 
 function randomTile() {
-  const tiles = [];
-  for (let codePoint = 0x1f000; codePoint < 0x1f02b; codePoint++) {
-    tiles.push(String.fromCodePoint(codePoint));
-  }
-  const randomTile = tiles[Math.floor(Math.random() * tiles.length)];
-  return randomTile;
+  return tileImages[Math.floor(Math.random() * tileImages.length)];
 }
