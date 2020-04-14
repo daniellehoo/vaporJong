@@ -38,9 +38,54 @@ function preload() {
   windows = loadImage("Windows.svg");
   pedestal = loadImage("pedestal.png");
   arizona = loadImage("can.png");
-  tileImages.push(loadImage("tileLibrary/mahjong-tile-chrysanthemum.png"));
-  tileImages.push(loadImage("tileLibrary/mahjong-tile-summer.png"));
+  tileImages.push(loadImage("tileLibrary/dragons/mahjong-tile-red-dragon.png"));
+  tileImages.push(loadImage("tileLibrary/dragons/mahjong-tile-white-dragon.png"));
+  tileImages.push(loadImage("tileLibrary/dragons/mahjong-tile-green-dragon.png"));
+  tileImages.push(loadImage("tileLibrary/flowers/mahjong-tile-chrysanthemum.png"));
+  tileImages.push(loadImage("tileLibrary/flowers/mahjong-tile-bamboo.png"));
+  tileImages.push(loadImage("tileLibrary/flowers/mahjong-tile-orchid.png"));
+  tileImages.push(loadImage("tileLibrary/flowers/mahjong-tile-plum.png"));
+  tileImages.push(loadImage("tileLibrary/seasons/mahjong-tile-summer.png"));
+  tileImages.push(loadImage("tileLibrary/seasons/mahjong-tile-winter.png"));
+  tileImages.push(loadImage("tileLibrary/seasons/mahjong-tile-spring.png"));
+  tileImages.push(loadImage("tileLibrary/seasons/mahjong-tile-autumn.png"));
+  tileImages.push(loadImage("tileLibrary/seasons/mahjong-tile-autumn.png"));
+  tileImages.push(loadImage("tileLibrary/characters/mahjong-tile-one-of-characters.png"));
+  tileImages.push(loadImage("tileLibrary/characters/mahjong-tile-two-of-characters.png"));
+  tileImages.push(loadImage("tileLibrary/characters/mahjong-tile-three-of-characters.png"));
+  tileImages.push(loadImage("tileLibrary/characters/mahjong-tile-four-of-characters.png"));
+  tileImages.push(loadImage("tileLibrary/characters/mahjong-tile-five-of-characters.png"));
+  tileImages.push(loadImage("tileLibrary/characters/mahjong-tile-six-of-characters.png"));
+  tileImages.push(loadImage("tileLibrary/characters/mahjong-tile-seven-of-characters.png"));
+  tileImages.push(loadImage("tileLibrary/characters/mahjong-tile-eight-of-characters.png"));
+  tileImages.push(loadImage("tileLibrary/characters/mahjong-tile-nine-of-characters.png"));
+  tileImages.push(loadImage("tileLibrary/circles/mahjong-tile-one-of-circles.png"));
+  tileImages.push(loadImage("tileLibrary/circles/mahjong-tile-two-of-circles.png"));
+  tileImages.push(loadImage("tileLibrary/circles/mahjong-tile-three-of-circles.png"));
+  tileImages.push(loadImage("tileLibrary/circles/mahjong-tile-four-of-circles.png"));
+  tileImages.push(loadImage("tileLibrary/circles/mahjong-tile-five-of-circles.png"));
+  tileImages.push(loadImage("tileLibrary/circles/mahjong-tile-six-of-circles.png"));
+  tileImages.push(loadImage("tileLibrary/circles/mahjong-tile-seven-of-circles.png"));
+  tileImages.push(loadImage("tileLibrary/circles/mahjong-tile-eight-of-circles.png"));
+  tileImages.push(loadImage("tileLibrary/circles/mahjong-tile-nine-of-circles.png"));
+  tileImages.push(loadImage("tileLibrary/bamboos/mahjong-tile-one-of-bamboos.png"));
+  tileImages.push(loadImage("tileLibrary/bamboos/mahjong-tile-two-of-bamboos.png"));
+  tileImages.push(loadImage("tileLibrary/bamboos/mahjong-tile-three-of-bamboos.png"));
+  tileImages.push(loadImage("tileLibrary/bamboos/mahjong-tile-four-of-bamboos.png"));
+  tileImages.push(loadImage("tileLibrary/bamboos/mahjong-tile-five-of-bamboos.png"));
+  tileImages.push(loadImage("tileLibrary/bamboos/mahjong-tile-six-of-bamboos.png"));
+  tileImages.push(loadImage("tileLibrary/bamboos/mahjong-tile-seven-of-bamboos.png"));
+  tileImages.push(loadImage("tileLibrary/bamboos/mahjong-tile-eight-of-bamboos.png"));
+  tileImages.push(loadImage("tileLibrary/bamboos/mahjong-tile-nine-of-bamboos.png"));
+
+
+
+
   tileImages.push(loadImage("tileLibrary/mahjong-tile-joker.png"));
+  tileImages.push(loadImage("tileLibrary/mahjong-tile-back.png"));
+
+
+
 }
 
 // setup is called once
