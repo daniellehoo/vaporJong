@@ -2,6 +2,35 @@ let david;
 let windows;
 let pedestal;
 let arizona;
+let tiles = [];
+
+class Tile {
+  constructor(x, y, character) {
+    this.position = createVector(x, y);
+    this.velocity = createVector(randomGaussian(0, 5), 0);
+    this.character = character;
+  }
+
+  update() {
+    this.position.add(this.velocity);
+    if (this.position.y > windowHeight - 36) {
+      if (this.velocity.y > 5) {
+        this.velocity.y *= -0.5;
+        this.velocity.x *= 0.5;
+      } else {
+        this.velocity.x = 0;
+      }
+      this.position.y = windowHeight - 36;
+    } else {
+      this.velocity.add(createVector(0, 1));
+    }
+  }
+
+  render() {
+    // rect(this.position.x, this.position.y, 100, 100);
+    text(this.character, this.position.x, this.position.y);
+  }
+}
 
 function preload() {
   david = loadImage("David_face.png");
@@ -16,6 +45,7 @@ function setup() {
   angleMode(DEGREES);
   createCanvas(windowWidth, windowHeight);
   drawBackground();
+  textSize(72);
   windows.filter(BLUR, 3);
 }
 
@@ -32,9 +62,12 @@ function draw() {
   rotate(millis() / 50);
   image(arizona, 0, 0, radius * 2, radius * 2);
   pop();
+  for (tile of tiles) {
+    tile.update();
+    tile.render();
+  }
 }
 
-// to do: build out grid
 function drawBackground() {
   background(color("#bc13fe"));
 
@@ -78,12 +111,12 @@ function drawBackground() {
       windowWidth * 0.5 + dx * 3,
       windowHeight
     );
-     line(
-       windowWidth * 0.5 - dx,
-       windowHeight * 0.6,
-       windowWidth * 0.5 - dx * 3,
-       windowHeight
-     );
+    line(
+      windowWidth * 0.5 - dx,
+      windowHeight * 0.6,
+      windowWidth * 0.5 - dx * 3,
+      windowHeight
+    );
     dx += 100;
   }
 
@@ -100,8 +133,9 @@ function windowResized() {
 }
 
 function mouseClicked() {
-  textSize(72);
-  text(randomTile(), mouseX, mouseY);
+  // textSize(72);
+  // text(randomTile(), mouseX, mouseY);
+  tiles.push(new Tile(mouseX, mouseY, randomTile()));
 }
 
 function randomTile() {
