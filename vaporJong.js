@@ -33,6 +33,8 @@ class Tile {
   }
 }
 
+
+
 function preload() {
   david = loadImage("David_face.png");
   windows = loadImage("Windows.svg");
